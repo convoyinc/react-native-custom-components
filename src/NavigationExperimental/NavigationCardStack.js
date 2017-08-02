@@ -206,6 +206,10 @@ class NavigationCardStack extends React.Component<DefaultProps, Props, void> {
      * Custom style applied to the scenes stack.
      */
     scenesStyle: View.propTypes.style,
+
+    // Passthrough
+    onTransitionStart: NavigationTransitioner.propTypes.onTransitionStart,
+    onTransitionEnd: NavigationTransitioner.propTypes.onTransitionEnd,
   };
 
   static defaultProps: DefaultProps = {
@@ -227,6 +231,8 @@ class NavigationCardStack extends React.Component<DefaultProps, Props, void> {
       <NavigationTransitioner
         configureTransition={this._configureTransition}
         navigationState={this.props.navigationState}
+        onTransitionStart={this.props.onTransitionStart}
+        onTransitionEnd={this.props.onTransitionEnd}
         render={this._render}
         style={this.props.style}
       />
