@@ -32,6 +32,7 @@ import {
   Platform,
   StyleSheet,
   View,
+  ViewPropTypes,
 } from 'react-native';
 
 var guid = require('./guid');
@@ -64,7 +65,7 @@ class NavigatorNavigationBar extends React.Component {
       presentedIndex: React.PropTypes.number,
     }),
     navigationStyles: React.PropTypes.object,
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
   };
 
   static Styles = NavigatorNavigationBarStyles;
