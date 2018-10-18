@@ -34,6 +34,7 @@ import {
   View,
   ViewPropTypes,
 } from 'react-native';
+var PropTypes = require('prop-types');
 
 var guid = require('./guid');
 
@@ -54,17 +55,17 @@ var navStatePresentedIndex = function(navState) {
 
 class NavigatorNavigationBar extends React.Component {
   static propTypes = {
-    navigator: React.PropTypes.object,
-    routeMapper: React.PropTypes.shape({
-      Title: React.PropTypes.func.isRequired,
-      LeftButton: React.PropTypes.func.isRequired,
-      RightButton: React.PropTypes.func.isRequired,
+    navigator: PropTypes.object,
+    routeMapper: PropTypes.shape({
+      Title: PropTypes.func.isRequired,
+      LeftButton: PropTypes.func.isRequired,
+      RightButton: PropTypes.func.isRequired,
     }).isRequired,
-    navState: React.PropTypes.shape({
-      routeStack: React.PropTypes.arrayOf(React.PropTypes.object),
-      presentedIndex: React.PropTypes.number,
+    navState: PropTypes.shape({
+      routeStack: PropTypes.arrayOf(PropTypes.object),
+      presentedIndex: PropTypes.number,
     }),
-    navigationStyles: React.PropTypes.object,
+    navigationStyles: PropTypes.object,
     style: ViewPropTypes.style,
   };
 
